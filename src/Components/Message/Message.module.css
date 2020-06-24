@@ -1,0 +1,52 @@
+.message {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	margin-top: 200px;
+}
+.image {
+    margin-right: 20px;
+}
+img {
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+}
+
+.textBuble {
+    min-height: 60px;
+	width: 300px;
+	padding: 10px 20px;
+	position: relative;
+	background-color: rgba(0, 165, 153, 1);
+	border-radius: 10px;
+}
+
+.textBuble:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  	left: -20px;
+	right: auto;
+  	top: auto;
+	bottom: 0px;
+	border: 22px solid;
+	border-color: transparent transparent rgb(60, 165, 153, 1) transparent;
+}
+
+.userName {
+	color: rgb(152, 255, 248);
+	font-weight: 700;
+}
+
+.textArea {
+	color: white;
+}
+.time {
+	font-size: 10px;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	color: white;
+}
