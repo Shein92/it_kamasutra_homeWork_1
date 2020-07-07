@@ -14,6 +14,11 @@ export type ListType = {
 
 export type PriorityType = "all" | "low" | "middle" | "hight";
 
+type PersonArrayType = {
+	id: string,
+	name: string
+}
+
 function App() {
 
 	let [list, setList] = useState<Array<ListType>> ([
@@ -58,10 +63,13 @@ function App() {
 		setList(newItems);
 	}
 
+	let arrNames: Array<PersonArrayType> = [];
+
 	function sayName(newName: string) {
 		let person = {id: v1(), name: newName};
+		arrNames = [person, ...arrNames]
 		if(person.name !== "" && person.name !== null) {
-			alert(`${person.name} has an ID ${person.id}`)
+			alert(`${person.name} has an ID ${person.id} of ${arrNames.length} people`)
 		} else {
 			alert ("Try once more again!")
 		}

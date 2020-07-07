@@ -15,8 +15,8 @@ function ItemList(props: ItemListPropsType) {
     let [newItem, setNewItem] = useState("");
 
     function addItem() {
-        props.addListItem(newItem);
-        setNewItem("")
+            props.addListItem(newItem);
+            setNewItem("") 
     }
 
     function onChangeValue(event: ChangeEvent<HTMLInputElement>) {
