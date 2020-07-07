@@ -72,6 +72,7 @@ function App() {
 			alert(`${person.name} has an ID ${person.id} of ${arrNames.length} people`)
 		} else {
 			alert ("Try once more again!")
+			arrNames.pop();
 		}
 		
 	}
