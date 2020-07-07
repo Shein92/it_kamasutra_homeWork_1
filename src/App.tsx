@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import './App.css';
 import Message from './Components/Message/Message';
 import ItemList from './Components/ItemList/ItemList';
+import { v1 } from 'uuid';
+import InputAlert from './Components/InputAlert/InputAlert';
 
 export type ListType = {
-	id: number,
+	id: string,
 	n: string,
 	p: string
 }
@@ -15,14 +17,14 @@ export type PriorityType = "all" | "low" | "middle" | "hight";
 function App() {
 
 	let [list, setList] = useState<Array<ListType>> ([
-		{id: 1, n: "работа", p: "hight"},
-		{id: 2, n: "аниме", p: "low"},
-		{id: 3, n: "игры", p: "middle"},
-		{id: 4, n: "реакт", p: "hight"},
-		{id: 5, n: "хтмл", p: "low"}
+		{id: v1(), n: "работа", p: "hight"},
+		{id: v1(), n: "аниме", p: "low"},
+		{id: v1(), n: "игры", p: "middle"},
+		{id: v1(), n: "реакт", p: "hight"},
+		{id: v1(), n: "хтмл", p: "low"}
 	])
 
-	function deleteItem (itemID: number) {
+	function deleteItem (itemID: string) {
 		let newList = list.filter(l => l.id !== itemID);
 		setList(newList);
 	}
@@ -44,11 +46,34 @@ function App() {
 		PriorityStatus = list;
 	}
 
+	// function addListItem () {
+	// 	let newItem = {id: 4, n:"порно", p: "low"}
+	// 	let newItems = [newItem, ...list];
+	// 	setList(newItems);
+	// }
+
+	function addListItem(value: string) {
+		let newItem = {id: v1(), n: value, p: "low"}
+		let newItems = [newItem, ...list];
+		setList(newItems);
+	}
+
+	function sayName(newName: string) {
+		let person = {id: v1(), name: newName};
+		if(person.name !== "" && person.name !== null) {
+			alert(`${person.name} has an ID ${person.id}`)
+		} else {
+			alert ("Try once more again!")
+		}
+		
+	}
+
 	return (
 		<div>
 			<Message name="Vasyl" text="Thanks the guys from IT-Kamasutra for a such great work!"/>
-			<ItemList title={"Priority list"} list={PriorityStatus} deleteItem={deleteItem} changeFilter={changeFilter}/>
-		</div>
+			<ItemList title={"Priority list"} list={PriorityStatus} deleteItem={deleteItem} changeFilter={changeFilter} addListItem={addListItem}/>
+			<InputAlert sayName={sayName}/>
+			</div>
 	);
 }
 
