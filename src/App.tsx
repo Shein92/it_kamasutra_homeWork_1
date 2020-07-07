@@ -70,11 +70,12 @@ function App() {
 		arrNames = [person, ...arrNames]
 		if(person.name !== "" && person.name !== null) {
 			alert(`${person.name} has an ID ${person.id} of ${arrNames.length} people`)
+			console.log(arrNames.map(name => name.name));
+			
 		} else {
 			alert ("Try once more again!")
 			arrNames.pop();
 		}
-		
 	}
 
 	return (
