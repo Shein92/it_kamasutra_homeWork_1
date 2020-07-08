@@ -51,12 +51,6 @@ function App() {
 		PriorityStatus = list;
 	}
 
-	// function addListItem () {
-	// 	let newItem = {id: 4, n:"порно", p: "low"}
-	// 	let newItems = [newItem, ...list];
-	// 	setList(newItems);
-	// }
-
 	function addListItem(value: string) {
 		let newItem = {id: v1(), n: value, p: "low"}
 		let newItems = [newItem, ...list];
@@ -65,24 +59,30 @@ function App() {
 
 	let arrNames: Array<PersonArrayType> = [];
 
+	let lengthOfNames: number = 0;
+
 	function sayName(newName: string) {
 		let person = {id: v1(), name: newName};
-		arrNames = [person, ...arrNames]
+		arrNames = [person, ...arrNames];
+		lengthOfNames = arrNames.length;
 		if(person.name !== "" && person.name !== null) {
 			alert(`${person.name} has an ID ${person.id} of ${arrNames.length} people`)
 			console.log(arrNames.map(name => name.name));
-			
+			console.log(lengthOfNames);
 		} else {
 			alert ("Try once more again!")
 			arrNames.pop();
 		}
 	}
-
+	function counter () {
+		lengthOfNames = arrNames.length;
+		return lengthOfNames;
+	}
 	return (
 		<div>
 			<Message name="Vasyl" text="Thanks the guys from IT-Kamasutra for a such great work!"/>
 			<ItemList title={"Priority list"} list={PriorityStatus} deleteItem={deleteItem} changeFilter={changeFilter} addListItem={addListItem}/>
-			<InputAlert sayName={sayName}/>
+			<InputAlert sayName={sayName} counter={counter}/>
 			</div>
 	);
 }
