@@ -79,12 +79,15 @@ function App() {
 		lengthOfNames = arrNames.length;
 		return lengthOfNames;
 	}
+
+	let [checked, setChecked] = useState<boolean>(false); 
+
 	return (
 		<div>
 			<Message name="Vasyl" text="Thanks the guys from IT-Kamasutra for a such great work!" />
 			<ItemList title={"Priority list"} list={PriorityStatus} deleteItem={deleteItem} changeFilter={changeFilter} addListItem={addListItem} />
 			<InputAlert sayName={sayName} counter={counter} />
-			<DemontrationFiles textOnTheBtn={"Click on it"}/>
+			<DemontrationFiles textOnTheBtn={"Click on it"} checked={checked} onChange={setChecked}/>
 		</div>
 	);
 }

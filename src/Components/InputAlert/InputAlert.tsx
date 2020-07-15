@@ -55,7 +55,7 @@ function InputAlert(props: InputAlertPropsType) {
             /> */}
             <Input style={inputNewStyle} value={name} onChange={onChangeValue} onKeyPress={onKeyPressed}/>
             {/* <button className={s.btn} onClick={sayThatName}>SAY MY NAME!</button> */}
-            <Button redBtn={true} style={btnNewStyle} textOnBtn={"SAY MY NAME!"} onClick={sayThatName}/>
+            <Button style={btnNewStyle} textOnBtn={"SAY MY NAME!"} onClick={sayThatName}/>
             <div className={s.spanElement}>Has a length of <span style={spanStyle}>{lengthItem}</span></div>
         </div>
     )

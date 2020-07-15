@@ -1,11 +1,11 @@
-import React, { ChangeEvent, KeyboardEvent } from 'react';
+import React, { ChangeEvent, KeyboardEvent, CSSProperties } from 'react';
 import s from './Input.module.css';
 
 type InputPropsType = {
     value?: string
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void
     onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void
-    style?: {}
+    style?: CSSProperties
 }
 
 function Input (props: InputPropsType) {
