@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { ListType, PriorityType } from '../../App';
 import item from "./ItemList.module.css";
+import Button from '../../common/Button';
+import Input from '../../common/Input';
 
 type ItemListPropsType = {
     title: string,
@@ -17,6 +19,11 @@ function ItemList(props: ItemListPropsType) {
     function addItem() {
             props.addListItem(newItem);
             setNewItem("") 
+    }
+    function onKeyPressed(event: KeyboardEvent<HTMLInputElement>) {
+        if (event.charCode === 13) {
+            addItem();
+        }
     }
 
     function onChangeValue(event: ChangeEvent<HTMLInputElement>) {
@@ -36,11 +43,18 @@ function ItemList(props: ItemListPropsType) {
         props.changeFilter('hight')
     }
 
+    let btnNewStyle = {
+        height: '20px'
+    }
+    let inputNewStyle = {
+        width: '150px',
+        display: 'inline-block'
+    };
     return (
         <div className={item.wrapper}>
             <h3>{props.title}</h3>
             <div>
-                <input
+                {/* <input
                     type="text"
                     value={newItem}
                     onChange={onChangeValue}
@@ -49,8 +63,11 @@ function ItemList(props: ItemListPropsType) {
                             addItem();
                         }
                     }}
+                /> */}
+                <Input style={inputNewStyle} value={newItem} onChange={onChangeValue} onKeyPress={onKeyPressed} 
                 />
-                <button onClick={addItem}>+</button>
+                {/* <button onClick={addItem}>+</button> */}
+                <Button style={btnNewStyle} textOnBtn={"+"} onClick={addItem}/>
             </div>
             <ul className={item.ul}>
                 {props.list.map(l => {
@@ -60,16 +77,21 @@ function ItemList(props: ItemListPropsType) {
                     return (
                         <li className={item.li} key={l.id}>
                             {l.n}
-                            <button className={item.crossBtn} onClick={onBtnClick}>x</button>
+                            {/* <button className={item.crossBtn} onClick={onBtnClick}>x</button> */}
+                            <Button style={btnNewStyle} onClick={onBtnClick} textOnBtn={"x"}/>
                         </li>
                     )
                 })}
             </ul>
             <div>
-                <button className={item.btn} onClick={onAllBtnClick}>All</button>
+                {/* <button className={item.btn} onClick={onAllBtnClick}>All</button>
                 <button className={item.btn} onClick={onLowBtnClick}>Low</button>
                 <button className={item.btn} onClick={onMiddleBtnClick}>Middle</button>
-                <button className={item.btn} onClick={onHightBtnClick}>Hight</button>
+                <button className={item.btn} onClick={onHightBtnClick}>Hight</button> */}
+                <Button textOnBtn={"All"} onClick={onAllBtnClick}/>
+                <Button textOnBtn={"Low"} onClick={onLowBtnClick}/>
+                <Button textOnBtn={"Middle"} onClick={onMiddleBtnClick}/>
+                <Button textOnBtn={"Hight"} onClick={onHightBtnClick}/>
             </div>
         </div>
     )
