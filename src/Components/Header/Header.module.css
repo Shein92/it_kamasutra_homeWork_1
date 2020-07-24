@@ -1,0 +1,37 @@
+.center {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+
+.main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    /* transition: linear 1s; */
+    /* animation: main 1.5s linear; */
+    /* opacity: 0.1; */
+}
+
+.link {
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 165, 153, 1);
+    display: block;
+    animation: main 1.5s linear;
+}
+
+@keyframes main {
+    0% {
+        opacity: 0;
+        margin-top: -100px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}

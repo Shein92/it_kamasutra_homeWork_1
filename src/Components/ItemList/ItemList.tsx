@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
-import { ListType, PriorityType } from '../../App';
 import item from "./ItemList.module.css";
 import Button from '../../common/Button';
 import Input from '../../common/Input';
+import { ListType, PriorityType } from '../PreJunior';
 
 type ItemListPropsType = {
     title: string,
@@ -54,16 +54,6 @@ function ItemList(props: ItemListPropsType) {
         <div className={item.wrapper}>
             <h3>{props.title}</h3>
             <div>
-                {/* <input
-                    type="text"
-                    value={newItem}
-                    onChange={onChangeValue}
-                    onKeyPress={(event: KeyboardEvent<HTMLInputElement>) => {
-                        if(event.charCode === 13) {
-                            addItem();
-                        }
-                    }}
-                /> */}
                 <Input style={inputNewStyle} value={newItem} onChange={onChangeValue} onKeyPress={onKeyPressed} 
                 />
                 {/* <button onClick={addItem}>+</button> */}
