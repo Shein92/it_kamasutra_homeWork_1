@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/it_kamasutra_homeWork_1/static/css/main.846d0e3c.chunk.css",
+    "main.css": "/it_kamasutra_homeWork_1/static/css/main.bad2d006.chunk.css",
     "main.js": "/it_kamasutra_homeWork_1/static/js/main.e0986f8f.chunk.js",
     "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.e0986f8f.chunk.js.map",
     "runtime-main.js": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js",
@@ -8,15 +8,15 @@
     "static/js/2.7cae7773.chunk.js": "/it_kamasutra_homeWork_1/static/js/2.7cae7773.chunk.js",
     "static/js/2.7cae7773.chunk.js.map": "/it_kamasutra_homeWork_1/static/js/2.7cae7773.chunk.js.map",
     "index.html": "/it_kamasutra_homeWork_1/index.html",
-    "precache-manifest.18ed677340b01f8ea836e8ae0a93b904.js": "/it_kamasutra_homeWork_1/precache-manifest.18ed677340b01f8ea836e8ae0a93b904.js",
+    "precache-manifest.c70bab981de4c25f8029bfaad2b5a86a.js": "/it_kamasutra_homeWork_1/precache-manifest.c70bab981de4c25f8029bfaad2b5a86a.js",
     "service-worker.js": "/it_kamasutra_homeWork_1/service-worker.js",
-    "static/css/main.846d0e3c.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.846d0e3c.chunk.css.map",
+    "static/css/main.bad2d006.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.bad2d006.chunk.css.map",
     "static/js/2.7cae7773.chunk.js.LICENSE.txt": "/it_kamasutra_homeWork_1/static/js/2.7cae7773.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0d8e3a19.js",
     "static/js/2.7cae7773.chunk.js",
-    "static/css/main.846d0e3c.chunk.css",
+    "static/css/main.bad2d006.chunk.css",
     "static/js/main.e0986f8f.chunk.js"
   ]
 }
