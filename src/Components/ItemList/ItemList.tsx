@@ -17,8 +17,12 @@ function ItemList(props: ItemListPropsType) {
     let [newItem, setNewItem] = useState("");
 
     function addItem() {
+        if (newItem === "") {
+            return;
+        } else {
             props.addListItem(newItem);
-            setNewItem("") 
+            setNewItem("")
+        }
     }
     function onKeyPressed(event: KeyboardEvent<HTMLInputElement>) {
         if (event.charCode === 13) {
@@ -54,10 +58,10 @@ function ItemList(props: ItemListPropsType) {
         <div className={item.wrapper}>
             <h3>{props.title}</h3>
             <div>
-                <Input style={inputNewStyle} value={newItem} onChange={onChangeValue} onKeyPress={onKeyPressed} 
+                <Input style={inputNewStyle} value={newItem} onChange={onChangeValue} onKeyPress={onKeyPressed}
                 />
                 {/* <button onClick={addItem}>+</button> */}
-                <Button style={btnNewStyle} textOnBtn={"+"} onClick={addItem}/>
+                <Button style={btnNewStyle} textOnBtn={"+"} onClick={addItem} />
             </div>
             <ul className={item.ul}>
                 {props.list.map(l => {
@@ -68,7 +72,7 @@ function ItemList(props: ItemListPropsType) {
                         <li className={item.li} key={l.id}>
                             {l.n}
                             {/* <button className={item.crossBtn} onClick={onBtnClick}>x</button> */}
-                            <Button style={btnNewStyle} onClick={onBtnClick} textOnBtn={"x"}/>
+                            <Button style={btnNewStyle} onClick={onBtnClick} textOnBtn={"x"} />
                         </li>
                     )
                 })}
@@ -78,10 +82,10 @@ function ItemList(props: ItemListPropsType) {
                 <button className={item.btn} onClick={onLowBtnClick}>Low</button>
                 <button className={item.btn} onClick={onMiddleBtnClick}>Middle</button>
                 <button className={item.btn} onClick={onHightBtnClick}>Hight</button> */}
-                <Button textOnBtn={"All"} onClick={onAllBtnClick}/>
-                <Button textOnBtn={"Low"} onClick={onLowBtnClick}/>
-                <Button textOnBtn={"Middle"} onClick={onMiddleBtnClick}/>
-                <Button textOnBtn={"Hight"} onClick={onHightBtnClick}/>
+                <Button textOnBtn={"All"} onClick={onAllBtnClick} />
+                <Button textOnBtn={"Low"} onClick={onLowBtnClick} />
+                <Button textOnBtn={"Middle"} onClick={onMiddleBtnClick} />
+                <Button textOnBtn={"Hight"} onClick={onHightBtnClick} />
             </div>
         </div>
     )
