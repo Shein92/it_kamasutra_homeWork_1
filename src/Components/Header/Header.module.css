@@ -2,6 +2,7 @@
     display: block;
     margin: 0 auto;
     width: 500px;
+    height: 60px;
 }
 
 .main {
@@ -22,14 +23,14 @@ a {
     color: white;
     background-color: rgba(0, 165, 153, 1);
     display: block;
-    transition: 0.5s;
+    transition: 0.3s;
     animation: main 1.5s linear;
 }
 
 .link {
     width: 110px;
     height: 35px;
-    transition: 0.5s;
+    transition: 0.3s;
     box-shadow: 0 12px 16px 0 rgba(0, 165, 153, 0.4), 0 17px 50px 0 rgba(0, 165, 153, 0.4);
 }
 
