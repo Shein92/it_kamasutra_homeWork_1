@@ -7,13 +7,13 @@ function Header() {
 		<div className={styles.center}>
 			<div className={styles.main}>
 				<div>
-					<NavLink to="/prejunior" className={styles.link}>PreJunior</NavLink>
+					<NavLink to="/prejunior" activeClassName={styles.link}>PreJunior</NavLink>
 				</div>
 				<div>
-					<NavLink to="/junior" className={styles.link}>Junior</NavLink>
+					<NavLink to="/junior" activeClassName={styles.link}>Junior</NavLink>
 				</div>
 				<div>
-					<NavLink to="/strongjunior" className={styles.link}>Junior+</NavLink>
+					<NavLink to="/strongjunior" activeClassName={styles.link}>Junior+</NavLink>
 				</div>
 			</div>
 		</div>
