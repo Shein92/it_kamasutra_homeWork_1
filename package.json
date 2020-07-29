@@ -22,7 +22,7 @@
     "uuid": "^8.2.0"
   },
   "scripts": {
-    "start": "react-scriptyarn s start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
