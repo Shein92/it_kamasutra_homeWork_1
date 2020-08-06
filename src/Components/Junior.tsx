@@ -74,12 +74,10 @@ function Junior() {
 
 	function onSelectOptionChange(event: ChangeEvent<HTMLSelectElement>) {
 		setOptionValue(event.currentTarget.value);
-		console.log(event.currentTarget.value);
 	}
 
 	function onRadioSelectChange(event: ChangeEvent<HTMLInputElement>) {
 		setRadioValue(event.currentTarget.value);
-		console.log(event.currentTarget.value);
 	}
 
 	return (

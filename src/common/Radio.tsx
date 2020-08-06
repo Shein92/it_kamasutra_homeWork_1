@@ -9,22 +9,23 @@ type RaiodPropsType = {
 
 function Radio(props: RaiodPropsType) {
 	return (
-		<form>
+		<div>
 			{props.RadioSelect.map(radio => {
 				return (
-					<div>
-						<input type="radio"
-							checked={props.value === radio.value}
-							key={radio.id}
-							name={radio.name}
-							value={radio.value}
-							onChange={props.onChange}
-						/>
-						<label>{radio.value}</label>
+					<div key={radio.id}>
+						<label>
+							<input type="radio"
+								checked={props.value === radio.value}
+								name={radio.name}
+								value={radio.value}
+								onChange={props.onChange}
+							/>
+							{radio.value}
+						</label>
 					</div>
 				)
 			})}
-		</form>
+		</div>
 	)
 };
 
