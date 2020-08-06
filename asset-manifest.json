@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/it_kamasutra_homeWork_1/static/css/main.3eb09418.chunk.css",
-    "main.js": "/it_kamasutra_homeWork_1/static/js/main.ffed9816.chunk.js",
-    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.ffed9816.chunk.js.map",
+    "main.js": "/it_kamasutra_homeWork_1/static/js/main.d4e65abd.chunk.js",
+    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.d4e65abd.chunk.js.map",
     "runtime-main.js": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js",
     "runtime-main.js.map": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js.map",
     "static/js/2.35b9d96e.chunk.js": "/it_kamasutra_homeWork_1/static/js/2.35b9d96e.chunk.js",
     "static/js/2.35b9d96e.chunk.js.map": "/it_kamasutra_homeWork_1/static/js/2.35b9d96e.chunk.js.map",
     "index.html": "/it_kamasutra_homeWork_1/index.html",
-    "precache-manifest.18984799b873eaacef48cf80d5346c0b.js": "/it_kamasutra_homeWork_1/precache-manifest.18984799b873eaacef48cf80d5346c0b.js",
+    "precache-manifest.cdf2890ab84d79e471dc4375722f77d7.js": "/it_kamasutra_homeWork_1/precache-manifest.cdf2890ab84d79e471dc4375722f77d7.js",
     "service-worker.js": "/it_kamasutra_homeWork_1/service-worker.js",
     "static/css/main.3eb09418.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.3eb09418.chunk.css.map",
     "static/js/2.35b9d96e.chunk.js.LICENSE.txt": "/it_kamasutra_homeWork_1/static/js/2.35b9d96e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0d8e3a19.js",
     "static/js/2.35b9d96e.chunk.js",
     "static/css/main.3eb09418.chunk.css",
-    "static/js/main.ffed9816.chunk.js"
+    "static/js/main.d4e65abd.chunk.js"
   ]
 }
