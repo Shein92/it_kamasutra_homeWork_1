@@ -9,19 +9,19 @@ export type CheckAgeActionType = {
 
 export type ActionsType = SortActionType | CheckAgeActionType
 
-export type StateType = {
+export type StateOfUsersType = {
 	id: string,
 	name: string,
 	age: number
 }
 
 export const hwReducer =
-	(state: Array<StateType>, action: ActionsType) => {
+	(state: Array<StateOfUsersType>, action: ActionsType) => {
 		switch (action.type) {
 			case 'SORT': {
-				let newState: Array<StateType> = []
+				let newState: Array<StateOfUsersType> = []
 				if (action.payload === 'up') {
-					newState = state.sort((a: StateType, b: StateType): number => {
+					newState = state.sort((a: StateOfUsersType, b: StateOfUsersType): number => {
 						let nameA = a.name.toLocaleLowerCase(),
 							nameB = b.name.toLocaleLowerCase();
 						if (nameA < nameB) {
@@ -34,7 +34,7 @@ export const hwReducer =
 					})
 				}
 				if (action.payload === 'down') {
-					newState = state.sort((a: StateType, b: StateType): number => {
+					newState = state.sort((a: StateOfUsersType, b: StateOfUsersType): number => {
 						let nameA = a.name.toLocaleLowerCase(),
 							nameB = b.name.toLocaleLowerCase();
 						if (nameB < nameA) {

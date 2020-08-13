@@ -2,6 +2,8 @@ import React, { useState, ChangeEvent } from 'react';
 import ChangeSpan from './ChangeSpan/ChangeSpan';
 import Select from '../common/Select';
 import Radio from '../common/Radio';
+import ReducerList from './ReducerList/ReducerList';
+import { StateOfUsersType, hwReducer, SortHomewWorkAC, CheckAgeHomeWorkAC } from '../state/homeWorkReducer';
 
 const styles: Object = {
 	textAlign: 'center',
@@ -48,11 +50,11 @@ function Junior() {
 	];
 
 	let RadioSelect: Array<RadioSelectType> = [
-		{id: 1, name: "drink", value: "tea"},
-		{id: 2, name: "drink", value: "milk"},
-		{id: 3, name: "drink", value: "water"},
-		{id: 4, name: "drink", value: "beer"},
-		{id: 5, name: "drink", value: "home-made shnaps :D"},
+		{ id: 1, name: "drink", value: "tea" },
+		{ id: 2, name: "drink", value: "milk" },
+		{ id: 3, name: "drink", value: "water" },
+		{ id: 4, name: "drink", value: "beer" },
+		{ id: 5, name: "drink", value: "home-made shnaps :D" },
 	]
 
 	let [optionValue, setOptionValue] = useState<string>('books');
@@ -80,6 +82,36 @@ function Junior() {
 		setRadioValue(event.currentTarget.value);
 	}
 
+	let initialUserList: Array<StateOfUsersType> = [
+		{ id: '1', name: 'Laci', age: 28 },
+		{ id: '2', name: 'Kari', age: 28 },
+		{ id: '3', name: 'Gyuri', age: 26 },
+		{ id: '4', name: 'Diana', age: 25 },
+		{ id: '5', name: 'Richi', age: 7 },
+		{ id: '6', name: 'Drake', age: 8 }
+	]
+
+	let [userList, setUserList] = useState<Array<StateOfUsersType>>(initialUserList);
+
+	function onDownClick () {
+		let filteredList: Array<StateOfUsersType> = hwReducer(userList, SortHomewWorkAC('down'));
+		setUserList([...filteredList]);
+	}
+
+	function onUpClick() {
+		let filteredList: Array<StateOfUsersType> = hwReducer(userList, SortHomewWorkAC('up'));
+		setUserList([...filteredList]);
+	}
+
+	function onYearsClick () {
+		let filteredList: Array<StateOfUsersType> = hwReducer(userList, CheckAgeHomeWorkAC(18));
+		setUserList(filteredList);
+	}
+
+	function onAllClick () {
+		setUserList([...initialUserList]);
+	}
+
 	return (
 		<div>
 			<div style={styles}>
@@ -96,6 +128,12 @@ function Junior() {
 			<Radio RadioSelect={RadioSelect}
 				value={radioValue}
 				onChange={onRadioSelectChange}
+			/>
+			<ReducerList people={userList}
+				onDownClick={onDownClick}
+				onUpClick={onUpClick}
+				onYearsClick={onYearsClick}
+				onAllClick={onAllClick}
 			/>
 		</div>
 	)
