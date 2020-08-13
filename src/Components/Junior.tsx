@@ -104,8 +104,8 @@ function Junior() {
 	}
 
 	function onYearsClick () {
-		let filteredList: Array<StateOfUsersType> = hwReducer(userList, CheckAgeHomeWorkAC(18));
-		setUserList(filteredList);
+		let filteredList = hwReducer(userList, CheckAgeHomeWorkAC(18));
+		setUserList([...filteredList]);
 	}
 
 	function onAllClick () {
