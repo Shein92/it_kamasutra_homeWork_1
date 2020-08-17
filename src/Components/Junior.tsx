@@ -94,17 +94,17 @@ function Junior() {
 	let [userList, setUserList] = useState<Array<StateOfUsersType>>(initialUserList);
 
 	function onDownClick () {
-		let filteredList: Array<StateOfUsersType> = hwReducer(userList, SortHomewWorkAC('down'));
+		let filteredList: Array<StateOfUsersType> = hwReducer(initialUserList, SortHomewWorkAC('down'));
 		setUserList([...filteredList]);
 	}
 
 	function onUpClick() {
-		let filteredList: Array<StateOfUsersType> = hwReducer(userList, SortHomewWorkAC('up'));
+		let filteredList: Array<StateOfUsersType> = hwReducer(initialUserList, SortHomewWorkAC('up'));
 		setUserList([...filteredList]);
 	}
 
 	function onYearsClick () {
-		let filteredList = hwReducer(userList, CheckAgeHomeWorkAC(18));
+		let filteredList = hwReducer(initialUserList, CheckAgeHomeWorkAC(18));
 		setUserList([...filteredList]);
 	}
 
