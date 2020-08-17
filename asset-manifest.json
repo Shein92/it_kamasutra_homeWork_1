@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/it_kamasutra_homeWork_1/static/css/main.3eb09418.chunk.css",
-    "main.js": "/it_kamasutra_homeWork_1/static/js/main.7f937af9.chunk.js",
-    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.7f937af9.chunk.js.map",
+    "main.js": "/it_kamasutra_homeWork_1/static/js/main.841a5e04.chunk.js",
+    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.841a5e04.chunk.js.map",
     "runtime-main.js": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js",
     "runtime-main.js.map": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js.map",
     "static/js/2.9f3c8d94.chunk.js": "/it_kamasutra_homeWork_1/static/js/2.9f3c8d94.chunk.js",
     "static/js/2.9f3c8d94.chunk.js.map": "/it_kamasutra_homeWork_1/static/js/2.9f3c8d94.chunk.js.map",
     "index.html": "/it_kamasutra_homeWork_1/index.html",
-    "precache-manifest.a0c642fdaa9649d0e795e81f7060a661.js": "/it_kamasutra_homeWork_1/precache-manifest.a0c642fdaa9649d0e795e81f7060a661.js",
+    "precache-manifest.284b592eeb897b5cac6ae73ded7b4160.js": "/it_kamasutra_homeWork_1/precache-manifest.284b592eeb897b5cac6ae73ded7b4160.js",
     "service-worker.js": "/it_kamasutra_homeWork_1/service-worker.js",
     "static/css/main.3eb09418.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.3eb09418.chunk.css.map",
     "static/js/2.9f3c8d94.chunk.js.LICENSE.txt": "/it_kamasutra_homeWork_1/static/js/2.9f3c8d94.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0d8e3a19.js",
     "static/js/2.9f3c8d94.chunk.js",
     "static/css/main.3eb09418.chunk.css",
-    "static/js/main.7f937af9.chunk.js"
+    "static/js/main.841a5e04.chunk.js"
   ]
 }
