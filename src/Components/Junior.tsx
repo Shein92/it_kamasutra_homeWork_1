@@ -4,6 +4,8 @@ import Select from '../common/Select';
 import Radio from '../common/Radio';
 import ReducerList from './ReducerList/ReducerList';
 import { StateOfUsersType, hwReducer, SortHomewWorkAC, CheckAgeHomeWorkAC } from '../state/homeWorkReducer';
+import Timer from './Timer/Timer';
+import moment from 'moment';
 
 const styles: Object = {
 	textAlign: 'center',
@@ -93,7 +95,7 @@ function Junior() {
 
 	let [userList, setUserList] = useState<Array<StateOfUsersType>>(initialUserList);
 
-	function onDownClick () {
+	function onDownClick() {
 		let filteredList: Array<StateOfUsersType> = hwReducer(initialUserList, SortHomewWorkAC('down'));
 		setUserList([...filteredList]);
 	}
@@ -103,13 +105,37 @@ function Junior() {
 		setUserList([...filteredList]);
 	}
 
-	function onYearsClick () {
+	function onYearsClick() {
 		let filteredList = hwReducer(initialUserList, CheckAgeHomeWorkAC(18));
 		setUserList([...filteredList]);
 	}
 
-	function onAllClick () {
+	function onAllClick() {
 		setUserList([...initialUserList]);
+	}    
+	
+	const [timerId, setTimerId] = useState<number>();
+	const [time, setTime] = useState(moment().format('LTS'));
+	const [date, setDate] = useState(moment().format('LL'));
+	const [showDateBlock, setShowDateBlock] = useState<boolean>(false)
+
+	let onStartClick = () => {
+		clearInterval(timerId);
+		const timer_id = window.setInterval(() => setTime(moment().format('LTS')), 1000);
+		setDate(moment().format('LL'));
+		setTimerId(timer_id);
+	}
+
+	let onStopClick = () => {
+		clearInterval(timerId);
+	}
+
+	let onMouseEnter = () => {
+		setShowDateBlock(true);
+	}
+
+	let onMouseLeave = () => {
+		setShowDateBlock(false);
 	}
 
 	return (
@@ -135,6 +161,13 @@ function Junior() {
 				onYearsClick={onYearsClick}
 				onAllClick={onAllClick}
 			/>
+			<Timer time={time}
+				date={date}
+				showDateBlock={showDateBlock}
+				onStartClick={onStartClick}
+				onStopClick={onStopClick}
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave} />
 		</div>
 	)
 }
