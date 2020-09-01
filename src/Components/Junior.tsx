@@ -6,6 +6,11 @@ import ReducerList from './ReducerList/ReducerList';
 import { StateOfUsersType, hwReducer, SortHomewWorkAC, CheckAgeHomeWorkAC } from '../state/homeWorkReducer';
 import Timer from './Timer/Timer';
 import moment from 'moment';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppRootStateType } from '../state/store';
+import { LoadingInitialStateType, setLoadingActionCreator } from '../state/loadingReducer';
+import Button from '../common/Button';
+import Preloader from '../common/Preloader/Preloader';
 
 const styles: Object = {
 	textAlign: 'center',
@@ -112,8 +117,8 @@ function Junior() {
 
 	function onAllClick() {
 		setUserList([...initialUserList]);
-	}    
-	
+	}
+
 	const [timerId, setTimerId] = useState<number>();
 	const [time, setTime] = useState(moment().format('LTS'));
 	const [date, setDate] = useState(moment().format('LL'));
@@ -138,36 +143,55 @@ function Junior() {
 		setShowDateBlock(false);
 	}
 
+	let loading = useSelector<AppRootStateType, LoadingInitialStateType>(state => state.loading);
+	let dispatch = useDispatch();
+
+	let onPreloaderButtonClick = () => {
+		dispatch(setLoadingActionCreator(true));
+		setTimeout(() => dispatch(setLoadingActionCreator(false)), 3000);
+	}
+
 	return (
 		<div>
-			<div style={styles}>
-				<ChangeSpan message={value}
-					onChange={changeValue}
-					onSaveClick={onSaveClick}
-					onRestoreClick={onRestoreClick}
+			{loading.loading ? <Preloader /> : <div>
+				<div style={styles}>
+					<ChangeSpan message={value}
+						onChange={changeValue}
+						onSaveClick={onSaveClick}
+						onRestoreClick={onRestoreClick}
+					/>
+				</div>
+				<Select selectOption={selectOption}
+					value={optionValue}
+					onChange={onSelectOptionChange}
 				/>
-			</div>
-			<Select selectOption={selectOption}
-				value={optionValue}
-				onChange={onSelectOptionChange}
-			/>
-			<Radio RadioSelect={RadioSelect}
-				value={radioValue}
-				onChange={onRadioSelectChange}
-			/>
-			<ReducerList people={userList}
-				onDownClick={onDownClick}
-				onUpClick={onUpClick}
-				onYearsClick={onYearsClick}
-				onAllClick={onAllClick}
-			/>
-			<Timer time={time}
-				date={date}
-				showDateBlock={showDateBlock}
-				onStartClick={onStartClick}
-				onStopClick={onStopClick}
-				onMouseEnter={onMouseEnter}
-				onMouseLeave={onMouseLeave} />
+				<Radio RadioSelect={RadioSelect}
+					value={radioValue}
+					onChange={onRadioSelectChange}
+				/>
+				<ReducerList people={userList}
+					onDownClick={onDownClick}
+					onUpClick={onUpClick}
+					onYearsClick={onYearsClick}
+					onAllClick={onAllClick}
+				/>
+				<Timer time={time}
+					date={date}
+					showDateBlock={showDateBlock}
+					onStartClick={onStartClick}
+					onStopClick={onStopClick}
+					onMouseEnter={onMouseEnter}
+					onMouseLeave={onMouseLeave}
+				/>
+				<div>
+					<div>
+						<span>PRELOADER EXAMPLE</span>	
+					</div>
+					<Button textOnBtn={"Preloader"}
+						onClick={onPreloaderButtonClick}
+					/>
+				</div>
+			</div>}
 		</div>
 	)
 }
