@@ -15,6 +15,7 @@ const Range = React.memo((props: RangePropsType) => {
 
     return (
         <div>
+            <div>Your number is: {props.value}</div>
             {props.minVaue}<input type="range" 
                             style={{cursor: 'pointer'}}
                             min={props.minVaue} 
