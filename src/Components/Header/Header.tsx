@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
-function Header() {
+const Header = React.memo(() => {
 	return (
 		<div className={styles.center}>
 			<div className={styles.main}>
@@ -18,6 +18,6 @@ function Header() {
 			</div>
 		</div>
 	)
-}
+})
 
 export default Header;

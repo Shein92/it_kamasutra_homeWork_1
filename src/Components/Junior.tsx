@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useCallback } from 'react';
 import ChangeSpan from './ChangeSpan/ChangeSpan';
 import Select from '../common/Select';
 import Radio from '../common/Radio';
@@ -11,6 +11,7 @@ import { AppRootStateType } from '../state/store';
 import { LoadingInitialStateType, setLoadingActionCreator } from '../state/loadingReducer';
 import Button from '../common/Button';
 import Preloader from '../common/Preloader/Preloader';
+import Range from '../common/Range/Range'
 
 const styles: Object = {
 	textAlign: 'center',
@@ -44,7 +45,7 @@ export function restoreState<T>(key: string, defaultState: T) {
 	return defaultState;
 }
 
-function Junior() {
+const Junior = React.memo(() => {
 
 	let [value, setValue] = useState<string>('hi');
 
@@ -67,27 +68,27 @@ function Junior() {
 	let [optionValue, setOptionValue] = useState<string>('books');
 	let [radioValue, setRadioValue] = useState<string>('tea')
 
-	function changeValue(text: string) {
+	const changeValue = useCallback((text: string) => {
 		setValue(text);
-	}
+	},[])
 
 	const state: StateType = restoreState<StateType>("test", { x: value });
 
-	function onSaveClick() {
+	const onSaveClick = useCallback(() => {
 		saveState<StateType>("test", { x: value })
-	}
+	},[value])
 
-	function onRestoreClick() {
+	const onRestoreClick = useCallback(() => {
 		setValue(state.x)
-	}
+	},[state.x])
 
-	function onSelectOptionChange(event: ChangeEvent<HTMLSelectElement>) {
+	const onSelectOptionChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
 		setOptionValue(event.currentTarget.value);
-	}
+	}, [])
 
-	function onRadioSelectChange(event: ChangeEvent<HTMLInputElement>) {
+	const onRadioSelectChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
 		setRadioValue(event.currentTarget.value);
-	}
+	},[])
 
 	let initialUserList: Array<StateOfUsersType> = [
 		{ id: '1', name: 'Laci', age: 28 },
@@ -100,24 +101,24 @@ function Junior() {
 
 	let [userList, setUserList] = useState<Array<StateOfUsersType>>(initialUserList);
 
-	function onDownClick() {
+	const onDownClick = useCallback(() => {
 		let filteredList: Array<StateOfUsersType> = hwReducer(initialUserList, SortHomewWorkAC('down'));
 		setUserList([...filteredList]);
-	}
+	},[initialUserList])
 
-	function onUpClick() {
+	const onUpClick = useCallback(() => {
 		let filteredList: Array<StateOfUsersType> = hwReducer(initialUserList, SortHomewWorkAC('up'));
 		setUserList([...filteredList]);
-	}
+	}, [initialUserList])
 
-	function onYearsClick() {
+	const onYearsClick = useCallback(() => {
 		let filteredList = hwReducer(initialUserList, CheckAgeHomeWorkAC(18));
 		setUserList([...filteredList]);
-	}
+	}, [initialUserList])
 
-	function onAllClick() {
+	const onAllClick = useCallback(() => {
 		setUserList([...initialUserList]);
-	}
+	}, [initialUserList])
 
 	const [timerId, setTimerId] = useState<number>();
 	const [time, setTime] = useState(moment().format('LTS'));
@@ -131,25 +132,33 @@ function Junior() {
 		setTimerId(timer_id);
 	}
 
-	let onStopClick = () => {
+	let onStopClick = useCallback(() => {
 		clearInterval(timerId);
-	}
+	}, [timerId])
 
-	let onMouseEnter = () => {
+	let onMouseEnter = useCallback(() => {
 		setShowDateBlock(true);
-	}
+	}, [])
 
-	let onMouseLeave = () => {
+	let onMouseLeave = useCallback(() => {
 		setShowDateBlock(false);
-	}
+	},[])
 
 	let loading = useSelector<AppRootStateType, LoadingInitialStateType>(state => state.loading);
 	let dispatch = useDispatch();
 
-	let onPreloaderButtonClick = () => {
+	let onPreloaderButtonClick = useCallback(() => {
 		dispatch(setLoadingActionCreator(true));
 		setTimeout(() => dispatch(setLoadingActionCreator(false)), 3000);
-	}
+	},[dispatch])
+
+	let minValue: number = 0;
+	let maxValue: number = 100;
+	let [rangeValue, setRangeValue] = useState<number>(0);
+
+	const rangeValueChange = useCallback((num: number) => {
+		setRangeValue(num);
+	}, []);
 
 	return (
 		<div>
@@ -191,9 +200,17 @@ function Junior() {
 						onClick={onPreloaderButtonClick}
 					/>
 				</div>
+				<div>
+					<span>Range example</span>
+					<Range maxValue={maxValue}
+						minVaue={minValue}
+						value={rangeValue}
+						onChange={rangeValueChange}
+					/>
+				</div>
 			</div>}
 		</div>
 	)
-}
+})
 
 export default Junior;

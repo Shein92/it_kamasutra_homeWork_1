@@ -13,7 +13,7 @@ let initialState: LoadingInitialStateType = {
 	loading: false
 };
 
-export const loadingReducer = (state: LoadingInitialStateType = initialState, action: ActionsType) => {
+export const loadingReducer = (state: LoadingInitialStateType = initialState, action: ActionsType): LoadingInitialStateType => {
 	switch (action.type) {
 		case "SET_LOADING": {
 			return { ...state, loading: action.loading }

@@ -9,7 +9,7 @@ type DemontrationFilesPropsType = {
     onChange: (e: boolean) => void
 }
 
-function DemontrationFiles(props: DemontrationFilesPropsType) {
+const DemontrationFiles = React.memo((props: DemontrationFilesPropsType) => {
     return (
         <div>
             <h3>Demontration of universal Components</h3>
@@ -18,6 +18,6 @@ function DemontrationFiles(props: DemontrationFilesPropsType) {
             <Button textOnBtn={props.textOnTheBtn}/>
         </div>
     )
-}
+})
 
 export default DemontrationFiles;

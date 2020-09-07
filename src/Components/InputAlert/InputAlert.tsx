@@ -8,7 +8,7 @@ type InputAlertPropsType = {
     counter: () => number
 }
 
-function InputAlert(props: InputAlertPropsType) {
+const InputAlert = React.memo((props: InputAlertPropsType) => {
     let [name, setName] = useState("");
     let [lengthItem, setLengthItem] = useState <number>(0)
 
@@ -59,6 +59,6 @@ function InputAlert(props: InputAlertPropsType) {
             <div className={s.spanElement}>Has a length of <span style={spanStyle}>{lengthItem}</span></div>
         </div>
     )
-}
+})
 
 export default InputAlert;

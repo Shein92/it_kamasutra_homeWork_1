@@ -10,7 +10,7 @@ type InputPropsType = {
     autoFocus?: boolean
 }
 
-function Input (props: InputPropsType) {
+const Input = React.memo((props: InputPropsType) => {
 
     return (
             <input style={props.style} 
@@ -23,6 +23,6 @@ function Input (props: InputPropsType) {
                 autoFocus={props.autoFocus}
             ></input>
     )
-}
+})
 
 export default Input;

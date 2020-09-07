@@ -7,7 +7,7 @@ type MessagePropsType = {
 	text: string
 }
 
-function Message(props: MessagePropsType) {
+const Message = React.memo((props: MessagePropsType) => {
 	let date = new Date();
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
@@ -29,6 +29,6 @@ function Message(props: MessagePropsType) {
 			</div>
 		</div>
 	)
-}
+})
 
 export default Message;

@@ -16,7 +16,7 @@ export type StateOfUsersType = {
 }
 
 export const hwReducer =
-	(state: Array<StateOfUsersType>, action: ActionsType) => {
+	(state: Array<StateOfUsersType>, action: ActionsType): Array<StateOfUsersType> => {
 		switch (action.type) {
 			case 'SORT': {
 				let newState: Array<StateOfUsersType> = []

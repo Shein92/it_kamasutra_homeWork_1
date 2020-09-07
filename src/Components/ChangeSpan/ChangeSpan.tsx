@@ -9,7 +9,7 @@ type ChangeSpanPropsType = {
     onRestoreClick: () => void
 }
 
-function ChangeSpan(props: ChangeSpanPropsType) {
+const ChangeSpan = React.memo((props: ChangeSpanPropsType) => {
 
     return (
         <div>
@@ -18,6 +18,6 @@ function ChangeSpan(props: ChangeSpanPropsType) {
             <Button textOnBtn={"Restore Data"} onClick={props.onRestoreClick}/>
         </div>
     )
-}
+})
 
 export default ChangeSpan;

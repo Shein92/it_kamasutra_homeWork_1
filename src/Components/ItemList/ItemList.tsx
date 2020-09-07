@@ -12,7 +12,7 @@ type ItemListPropsType = {
 	addListItem: (value: string) => void
 }
 
-function ItemList(props: ItemListPropsType) {
+const ItemList = React.memo((props: ItemListPropsType) => {
 
 	let [newItem, setNewItem] = useState("");
 
@@ -89,6 +89,6 @@ function ItemList(props: ItemListPropsType) {
 			</div>
 		</div>
 	)
-}
+})
 
 export default ItemList;

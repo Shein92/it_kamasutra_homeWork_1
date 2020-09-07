@@ -7,7 +7,7 @@ type SelectPropsType = {
 	value: string
 }
 
-function Select(props: SelectPropsType) {
+const Select = React.memo((props: SelectPropsType) => {
 	return (
 		<select onChange={props.onChange} value={props.value}>
 			{props.selectOption.map(op => {
@@ -17,6 +17,6 @@ function Select(props: SelectPropsType) {
 			})}
 		</select>
 	)
-}
+})
 
 export default Select;

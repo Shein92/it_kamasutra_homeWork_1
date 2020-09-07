@@ -12,7 +12,7 @@ type ClockPropsType = {
 	onMouseLeave: () => void
 }
 
-function Timer(props: ClockPropsType) {
+const Timer = React.memo((props: ClockPropsType) => {
 	let dateStyle = {
 		width: '150px',
 		height: '30px',
@@ -35,6 +35,6 @@ function Timer(props: ClockPropsType) {
 			<Button textOnBtn={"Stop"} onClick={props.onStopClick} />
 		</div>
 	)
-}
+})
 
 export default Timer;

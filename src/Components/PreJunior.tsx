@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 // import logo from './logo.svg';
 import '../App.css';
 import { v1 } from 'uuid';
@@ -20,7 +20,7 @@ type PersonArrayType = {
 	name: string
 }
 
-function PreJunior () {
+const PreJunior = React.memo(() => {
     let [list, setList] = useState<Array<ListType>>([
 		{ id: v1(), n: "работа", p: "hight" },
 		{ id: v1(), n: "аниме", p: "low" },
@@ -29,16 +29,16 @@ function PreJunior () {
 		{ id: v1(), n: "хтмл", p: "low" }
 	])
 
-	function deleteItem(itemID: string) {
+	const deleteItem = useCallback((itemID: string) => {
 		let newList = list.filter(l => l.id !== itemID);
 		setList(newList);
-	}
+	}, [list])
 
 	let [priority, setPriority] = useState<PriorityType>("all");
 
-	function changeFilter(newFilter: PriorityType) {
+	const changeFilter = useCallback((newFilter: PriorityType) => {
 		setPriority(newFilter);
-	}
+	},[])
 
 	let PriorityStatus;
 	if (priority === "low") {
@@ -51,17 +51,17 @@ function PreJunior () {
 		PriorityStatus = list;
 	}
 
-	function addListItem(value: string) {
+	const addListItem = useCallback((value: string) => {
 		let newItem = { id: v1(), n: value, p: "low" }
 		let newItems = [newItem, ...list];
 		setList(newItems);
-	}
+	}, [list])
 
 	let arrNames: Array<PersonArrayType> = [];
 
 	let lengthOfNames: number = 0;
 
-	function sayName(newName: string) {
+	const sayName = (newName: string) => {
 		let person = { id: v1(), name: newName };
 		arrNames = [person, ...arrNames];
 		lengthOfNames = arrNames.length;
@@ -74,7 +74,7 @@ function PreJunior () {
 			arrNames.pop();
 		}
 	}
-	function counter() {
+	const counter = () => {
 		lengthOfNames = arrNames.length;
 		return lengthOfNames;
 	}
@@ -89,6 +89,6 @@ function PreJunior () {
 			<DemontrationFiles textOnTheBtn={"Click on it"} checked={checked} onChange={setChecked}/>
 		</div>
 	);
-}
+})
 
 export default PreJunior;

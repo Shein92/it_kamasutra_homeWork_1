@@ -10,7 +10,7 @@ type ReducerListPropsType = {
     onAllClick: () => void
 }
 
-function ReducerList (props: ReducerListPropsType) {
+const ReducerList = React.memo((props: ReducerListPropsType) => {
     return (
         <div >
             <h3>List of people</h3>
@@ -25,6 +25,6 @@ function ReducerList (props: ReducerListPropsType) {
             <Button textOnBtn={"18+ years old"} onClick={props.onYearsClick}/>
         </div>
     )
-}
+})
 
 export default ReducerList;

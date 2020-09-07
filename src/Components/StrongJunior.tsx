@@ -5,10 +5,10 @@ const styles: Object = {
     marginTop: '50px'
 }
 
-function StrongJunior () {
+const StrongJunior = React.memo(() => {
     return (
         <h1 style={styles}>THE JUNIOR+ CONTENT WILL BE HERE SOON</h1>
     )
-}
+})
 
 export default StrongJunior;

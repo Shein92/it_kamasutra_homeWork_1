@@ -7,7 +7,7 @@ type RaiodPropsType = {
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-function Radio(props: RaiodPropsType) {
+const Radio = React.memo((props: RaiodPropsType) => {
 	return (
 		<div>
 			{props.RadioSelect.map(radio => {
@@ -27,6 +27,6 @@ function Radio(props: RaiodPropsType) {
 			})}
 		</div>
 	)
-};
+});
 
 export default Radio;
