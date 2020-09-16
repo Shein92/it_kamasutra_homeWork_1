@@ -1,26 +1,31 @@
 import React, { ChangeEvent } from 'react';
-import { RadioSelectType } from '../Components/Junior';
 
 type RaiodPropsType = {
-	RadioSelect: Array<RadioSelectType>,
+	RadioSelect: Array<string>,
 	value: string,
-	onChange: (event: ChangeEvent<HTMLInputElement>) => void
+	name: string
+	onChange: (value: string) => void
 }
 
 const Radio = React.memo((props: RaiodPropsType) => {
+
+	const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+		props.onChange(event.currentTarget.value)
+	}
+
 	return (
 		<div>
-			{props.RadioSelect.map(radio => {
+			{props.RadioSelect.map((radio, index) => {
 				return (
-					<div key={radio.id}>
+					<div key={index}>
 						<label>
 							<input type="radio"
-								checked={props.value === radio.value}
-								name={radio.name}
-								value={radio.value}
-								onChange={props.onChange}
+								checked={props.value === radio}
+								name={props.name}
+								value={radio}
+								onChange={onChange}
 							/>
-							{radio.value}
+							{radio}
 						</label>
 					</div>
 				)
