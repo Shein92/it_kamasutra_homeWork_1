@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/it_kamasutra_homeWork_1/static/css/main.3182862d.chunk.css",
-    "main.js": "/it_kamasutra_homeWork_1/static/js/main.245bfb9e.chunk.js",
-    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.245bfb9e.chunk.js.map",
+    "main.css": "/it_kamasutra_homeWork_1/static/css/main.27181ab6.chunk.css",
+    "main.js": "/it_kamasutra_homeWork_1/static/js/main.f9a1144c.chunk.js",
+    "main.js.map": "/it_kamasutra_homeWork_1/static/js/main.f9a1144c.chunk.js.map",
     "runtime-main.js": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js",
     "runtime-main.js.map": "/it_kamasutra_homeWork_1/static/js/runtime-main.0d8e3a19.js.map",
-    "static/js/2.ab9eb3fd.chunk.js": "/it_kamasutra_homeWork_1/static/js/2.ab9eb3fd.chunk.js",
-    "static/js/2.ab9eb3fd.chunk.js.map": "/it_kamasutra_homeWork_1/static/js/2.ab9eb3fd.chunk.js.map",
+    "static/js/2.062115bc.chunk.js": "/it_kamasutra_homeWork_1/static/js/2.062115bc.chunk.js",
+    "static/js/2.062115bc.chunk.js.map": "/it_kamasutra_homeWork_1/static/js/2.062115bc.chunk.js.map",
     "index.html": "/it_kamasutra_homeWork_1/index.html",
-    "precache-manifest.c320cc2e5685b8ed331c697072759fd6.js": "/it_kamasutra_homeWork_1/precache-manifest.c320cc2e5685b8ed331c697072759fd6.js",
+    "precache-manifest.18bca8a1455397d3f0b221f4ee667190.js": "/it_kamasutra_homeWork_1/precache-manifest.18bca8a1455397d3f0b221f4ee667190.js",
     "service-worker.js": "/it_kamasutra_homeWork_1/service-worker.js",
-    "static/css/main.3182862d.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.3182862d.chunk.css.map",
-    "static/js/2.ab9eb3fd.chunk.js.LICENSE.txt": "/it_kamasutra_homeWork_1/static/js/2.ab9eb3fd.chunk.js.LICENSE.txt",
+    "static/css/main.27181ab6.chunk.css.map": "/it_kamasutra_homeWork_1/static/css/main.27181ab6.chunk.css.map",
+    "static/js/2.062115bc.chunk.js.LICENSE.txt": "/it_kamasutra_homeWork_1/static/js/2.062115bc.chunk.js.LICENSE.txt",
     "static/media/spinner.gif": "/it_kamasutra_homeWork_1/static/media/spinner.c542201c.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.0d8e3a19.js",
-    "static/js/2.ab9eb3fd.chunk.js",
-    "static/css/main.3182862d.chunk.css",
-    "static/js/main.245bfb9e.chunk.js"
+    "static/js/2.062115bc.chunk.js",
+    "static/css/main.27181ab6.chunk.css",
+    "static/js/main.f9a1144c.chunk.js"
   ]
 }

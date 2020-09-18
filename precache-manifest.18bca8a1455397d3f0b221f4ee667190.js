@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4550bcd7933c558bebe2f3ee393bdcfd",
+    "revision": "5b90b0424d25faf02253d43721b73223",
     "url": "/it_kamasutra_homeWork_1/index.html"
   },
   {
-    "revision": "c2bda46ab1c42d167533",
-    "url": "/it_kamasutra_homeWork_1/static/css/main.3182862d.chunk.css"
+    "revision": "01e9bc26465237abf11b",
+    "url": "/it_kamasutra_homeWork_1/static/css/main.27181ab6.chunk.css"
   },
   {
-    "revision": "143f1b4406ed76dc659f",
-    "url": "/it_kamasutra_homeWork_1/static/js/2.ab9eb3fd.chunk.js"
+    "revision": "72e608f6dddb1e619c68",
+    "url": "/it_kamasutra_homeWork_1/static/js/2.062115bc.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/it_kamasutra_homeWork_1/static/js/2.ab9eb3fd.chunk.js.LICENSE.txt"
+    "url": "/it_kamasutra_homeWork_1/static/js/2.062115bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c2bda46ab1c42d167533",
-    "url": "/it_kamasutra_homeWork_1/static/js/main.245bfb9e.chunk.js"
+    "revision": "01e9bc26465237abf11b",
+    "url": "/it_kamasutra_homeWork_1/static/js/main.f9a1144c.chunk.js"
   },
   {
     "revision": "c91baa6e61a1b192e799",
