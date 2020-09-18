@@ -9,7 +9,7 @@ type RequestPropsType = {
 	serverAnswer: string
 }
 
-const Request1 = (props: RequestPropsType) => {
+const Request1 = React.memo((props: RequestPropsType) => {
 	const onClick = () => {
 		props.onClick();
 	}
@@ -21,6 +21,6 @@ const Request1 = (props: RequestPropsType) => {
 			<span>{props.serverAnswer}</span>
 		</div>
 	)
-}
+})
 
 export default Request1;
