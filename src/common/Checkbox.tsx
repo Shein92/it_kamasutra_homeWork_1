@@ -1,14 +1,21 @@
 import React, { ChangeEvent } from 'react';
 
 type CheckboxPropsType = {
-	onChange: (e: boolean) => void,
+	onChange?: (e: boolean) => void,
 	checked: boolean
 }
 
 const Checkbox = React.memo((props: CheckboxPropsType) => {
+
+	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+		if(props.onChange) {
+			props.onChange(e.currentTarget.checked)
+		}
+	}
+
 	return (
 		// <input type="checkbox" />
-		<input onChange={(e: ChangeEvent<HTMLInputElement>) => props.onChange(e.currentTarget.checked)} type="checkbox" checked={props.checked} />
+		<input onChange={onChange} type="checkbox" checked={props.checked} />
 	)
 })
 

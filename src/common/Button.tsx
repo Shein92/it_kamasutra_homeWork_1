@@ -9,6 +9,7 @@ export type ButtonPropsType = {
 }
 
 
+
 const Button = React.memo((props: ButtonPropsType) => {
 	return (
 		<button style={props.style} className={props.redBtn ? s.redBtn : s.btn} onClick={props.onClick}>{props.textOnBtn}</button>

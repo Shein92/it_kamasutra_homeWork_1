@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Radio from '../common/Radio';
-import { ChangeThemeAC, darkTheme, lightTheme, ThemeInitialStateType } from '../state/backgroundColorReducer';
+import { ChangeThemeAC, ThemeInitialStateType } from '../state/backgroundColorReducer';
 import { AppRootStateType } from '../state/store';
-
+import Request1 from './Request/Request';
+import { RequestAPI } from './Request/RequestAPI';
+import s from './StrongJunior.module.css'
 
 
 const StrongJunior = React.memo(() => {
@@ -11,23 +13,43 @@ const StrongJunior = React.memo(() => {
 	let dispatch = useDispatch();
 
 	const onThemeChange = (value: string) => {
-		if(value === 'light' || value === 'dark') {
+		if (value === 'light' || value === 'dark') {
 			dispatch(ChangeThemeAC(value))
 		}
 	}
-	const ThemeSelect: Array<string> = ['light', 'dark']
+	const ThemeSelect: Array<string> = ['light', 'dark'];
+
+	let [checked, setChecked] = useState<boolean>(false);
+	let [serverAnswer, setServerAnswer] = useState<string>('')
+
+	const onClickChangeCheckboxStatus = () => {
+		RequestAPI.changeCheckbox(!checked)
+			.then(res => {
+				setChecked(res.data.yourBody.success);
+				setServerAnswer(res.data.info);
+			})
+			.catch(error => {
+				setServerAnswer(error.message);
+			})
+	}
 
 	return (
-		<div style={theme.theme === 'light' ? lightTheme : darkTheme}>
-			<Radio 
+		<div className={theme.theme === 'light' ? s.lightTheme : s.darkTheme}>
+			<Radio
 				onChange={onThemeChange}
 				RadioSelect={ThemeSelect}
 				name={'theme'}
 				value={theme.theme}
 			/>
-		</div>	
+			{'<<<<<---------REQUEST--------->>>>>'}
+			<Request1 checked={checked}
+				textOnBtn={'click here!'}
+				onClick={onClickChangeCheckboxStatus}
+				serverAnswer={serverAnswer}
+			/>
+		</div>
 	)
-	
+
 })
 
 export default StrongJunior;

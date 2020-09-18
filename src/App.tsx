@@ -7,14 +7,14 @@ import Junior from './Components/Junior';
 import StrongJunior from './Components/StrongJunior';
 import { useSelector } from 'react-redux';
 import { AppRootStateType } from './state/store';
-import { darkTheme, lightTheme, ThemeInitialStateType } from './state/backgroundColorReducer';
-
+import { ThemeInitialStateType } from './state/backgroundColorReducer';
+import s from './Components/StrongJunior.module.css'
 
 
 function App() {
 	let theme = useSelector<AppRootStateType, ThemeInitialStateType>(state => state.theme);
 	return (
-		<div style={theme.theme === 'light' ? lightTheme : darkTheme}>
+		<div className={theme.theme === 'light' ? s.lightTheme : s.darkTheme}>
 			<HashRouter >
 				<Header />
 				<Route path="/prejunior" render={() => <PreJunior />} />

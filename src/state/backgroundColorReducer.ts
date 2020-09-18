@@ -1,21 +1,6 @@
-import { CSSProperties } from "react"
-
 export type ThemeInitialStateType = {
 	theme: Theme
 }
-
-export const lightTheme: CSSProperties = {
-	backgroundColor: '#E2E2E2',
-	color: '#363537',
-	border: '#FFF',
-}
-
-export const darkTheme: CSSProperties = {
-	backgroundColor: '#363537',
-	color: '#FAFAFA',
-	border: '#6B8096',
-}
-
 
 export const initialState: ThemeInitialStateType = {
 	theme: 'light'
